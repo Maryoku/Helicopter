@@ -11,7 +11,8 @@ void speed(vector <Time> v, vector <Points> v1)
 
 	for (int i = 1; i < size; i++)
 	{
-		if (v[i].hour - v[i - 1].hour == -23)
+		if ((v[i].hour - v[i - 1].hour >= -23) && (v[i].hour - v[i - 1].hour < 0))
+			// fix проверка условия перехода суток в рамках двух последовательных точек
 			minute[i - 1] = (((v[i].hour + 24) * 60 + v[i].minute) - (v[i - 1].hour * 60 + v[i - 1].minute)) - 5;
 		else
 			minute[i - 1] = ((v[i].hour * 60 + v[i].minute) - (v[i - 1].hour * 60 + v[i - 1].minute)) - 5;

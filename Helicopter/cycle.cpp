@@ -16,7 +16,7 @@ void getCycles(vector <Points> loc)
 				}
 
 				cycle++;
-				i = j;
+				i++; //i=1 2 3 2 4 j=1 2 7, i=j неправильно, проскакивает некоторые циклы, можно реализовать ч/з break
 			}
 
 		}
